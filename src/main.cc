@@ -11,8 +11,28 @@ int main(int argc, char const *argv[]) {
     do {
         int state;
 
-        for (size_t i = 0; i < 800 * 600; i++) {
-            buffer[i] = std::rand();
+        for (size_t i = 0; i < 800 * 100; i++) {
+            buffer[i] = 0xffff0000;
+        }
+
+        for (size_t i = 800 * 100; i < 800 * 200; i++) {
+            buffer[i] = 0xffff8800;
+        }
+
+        for (size_t i = 800 * 200; i < 800 * 300; i++) {
+            buffer[i] = 0xffffff00;
+        }
+
+        for (size_t i = 800 * 300; i < 800 * 400; i++) {
+            buffer[i] = 0xff008000;
+        }
+
+        for (size_t i = 800 * 400; i < 800 * 500; i++) {
+            buffer[i] = 0xff0000ff;
+        }
+
+        for (size_t i = 800 * 500; i < 800 * 600; i++) {
+            buffer[i] = 0xff800080;
         }
 
         state = mfb_update_ex(window, buffer, 800, 600);
