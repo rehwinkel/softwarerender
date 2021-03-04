@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "*.olvn": "json",
+        "*.lalrpop": "rust",
+        "tensor": "cpp"
+    }
+}
